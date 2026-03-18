@@ -25,3 +25,10 @@ def get_globals():
         Tupla (int_value, str_value)
     """
     return (global_int, global_str)
+print(get_globals())    # (None, None)
+set_globals(10, "Hello")
+print(get_globals())    # (10, "Hello")
+set_globals(42, "Mundo")
+print(get_globals())    # (42, "Mundo")
+
+   
