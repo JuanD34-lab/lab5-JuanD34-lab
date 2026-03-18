@@ -1,15 +1,25 @@
+from secret_number import seed_secret_numbers, generate_secret_number
+from response import input_response 
 
+def main():
+    seed = int(input("Enter a seed number: "))
+    seed_secret_numbers(seed)
 
-def número_de_semillas():
-    semillas = int(input("Enter the number of seeds:\n"))
-    return semillas
-semillas = número_de_semillas()
-print(semillas)
+    secret = generate_secret_number()
 
+    tries = 0
+    guessed = False
 
-for num in range(0, 100):
-   if num == 42:
-    break 
-print(num)
-print("What is your guess?")
+    #Bucle del juego
+    while not guessed:
+        guess = int(input("what is your guess: "))
+        tries += 1 
+        message, guessed = input_response(secret, guess)
+        print(message)
+
+    print(f"It took you {tries} tries!")
+
+if __name__ == "__main__":
+    main()
+
 
